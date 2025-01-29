@@ -1,8 +1,7 @@
-# React + Vite
+<h1>Curso de React Intermedio </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projecto final del Curso de React intermido de OpenWebinars
 
-Currently, two official plugins are available:
+[Curso OpenWebinars](https://openwebinars.net/academia/portada/react-intermedio/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Repositoro del Curso](https://github.com/Amaza-ing/OW-React-Intermidiate-Course)
