@@ -12,6 +12,7 @@ function CreateTask() {
     setTaskTitle(e.target.value);
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!taskTitle) return;
