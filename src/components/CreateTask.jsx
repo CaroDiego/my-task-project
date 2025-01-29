@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
-import { TaskContext } from "../../context/task.context";
+import { TaskContext } from "../context/task.context";
+import "./CreateTask.css";
+import { createId } from "../utils/utils";
 
 function CreateTask() {
   const { addTask } = useContext(TaskContext);
@@ -15,7 +17,7 @@ function CreateTask() {
     if (!taskTitle) return;
 
     const newTask = {
-      id: 123,
+      id: createId(),
       title: taskTitle,
       completed: false,
     };
@@ -32,8 +34,8 @@ function CreateTask() {
         placeholder="Nueva Tarea"
         value={taskTitle}
         onChange={handleInput}
-          />
-          <button className="create-btn">+</button>
+      />
+      <button className="create-btn">+</button>
     </form>
   );
 }

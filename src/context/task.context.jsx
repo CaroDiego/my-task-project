@@ -2,31 +2,31 @@ import { createContext, useState } from "react";
 const TaskContext = createContext();
 
 function TasksProviderWrapper(props) {
-  const [tasks, setTasks] = useState([
-    {
-      id: "1",
-      title: "Comprar la cena",
-      completed: false,
-    },
-    {
-      id: "2",
-      title: "Cocinar",
-      completed: true,
-    },
-    {
-      id: "3",
-      title: "Cenar",
-      completed: false,
-    },
-    {
-      id: "4",
-      title: "Lavar los platos",
-      completed: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
-  const addTask = (newTask) => {
-    setTasks([newTask, ...tasks]);
+  const API_URL = "https://cabd98b331266d873072.free.beeceptor.com/api/tasks/";
+
+  const getTasks = async () => {
+    try {
+      console.log("Get Tasks");
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setTasks(data);
+    } catch (e) {
+      console.log("Error fetching tasks");
+      console.error(e);
+    }
+  };
+  const addTask = async (newTask) => {
+    try {
+      await fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify(newTask),
+      });
+      setTasks([newTask, ...tasks]);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   const updateTask = (updatedTask) => {
@@ -38,7 +38,9 @@ function TasksProviderWrapper(props) {
     setTasks(uptadedTasks);
   };
   return (
-    <TaskContext.Provider value={{ tasks, setTasks, addTask, updateTask }}>
+    <TaskContext.Provider
+      value={{ tasks, setTasks, getTasks, addTask, updateTask }}
+    >
       {props.children}
     </TaskContext.Provider>
   );

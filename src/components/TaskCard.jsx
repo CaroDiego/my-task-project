@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { TaskContext } from "../../context/task.context";
+import { TaskContext } from "../context/task.context";
+import "./TaskCard.css";
 
 function TaskCard({ task }) {
   const { updateTask } = useContext(TaskContext);
