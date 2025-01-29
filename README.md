@@ -4,4 +4,5 @@ Projecto final del Curso de React intermido de OpenWebinars
 
 [Curso OpenWebinars](https://openwebinars.net/academia/portada/react-intermedio/)
 
-[Repositoro del Curso](https://github.com/Amaza-ing/OW-React-Intermidiate-Course)
+[Repositoro del Curso](https://github.com/OpenWebinarsNet/OW-React-Intermidiate-final-project)
+
